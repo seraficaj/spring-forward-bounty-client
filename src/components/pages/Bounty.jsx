@@ -17,7 +17,7 @@ export default function Bounty({ bounties }) {
         setBounty(response.data)
       })
       .catch(console.log)
-  }, [])
+  }, [showForm])
 
   // // match state to the bounty from the url
   // const matchedBounty = bounties.find(bounty => bounty._id === id)
@@ -30,7 +30,11 @@ export default function Bounty({ bounties }) {
      {/* ternary for conditional rednering */}
       {
         showForm ? 
-          <BountyEditForm bounty={bounty} /> : 
+          <BountyEditForm 
+            bounty={bounty}
+            setShowForm={setShowForm} 
+            showForm={showForm}
+          /> : 
           <BountyDetails bounty={bounty}/>
       }
 
