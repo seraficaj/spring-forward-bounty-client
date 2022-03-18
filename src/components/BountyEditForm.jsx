@@ -7,6 +7,12 @@ export default function BountyEditForm({ bounty }) {
   const handleSubmit = e => {
     e.preventDefault()
     // do some axios
+    // axios.method(url, request body, options)
+    axios.put(`${process.env.REACT_APP_SERVER_URL}/bounties/${bounty._id}`, bountyForm)
+      .then(response => {
+        console.log('🌈🌈🌈🌈🌈🌈🌈🌈🌈', response.data)
+      })
+      .catch(console.log)
   }
   
   return (
