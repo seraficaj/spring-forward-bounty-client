@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import Bounties from './components/pages/Bounties'
 import Bounty from './components/pages/Bounty'
 import Home from './components/pages/Home'
@@ -11,6 +14,13 @@ import {
 } from 'react-router-dom'
 
 function App() {
+  const [bounties, setBounties] = useState([]);
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/bounties`).then(res => {
+      setBounties(res.data);
+    })
+  }, [])
+
   return (
     <Router>
       <div className="App">
@@ -22,12 +32,12 @@ function App() {
 
           <Route 
             exact path="/bounties"
-            element={<Bounties />}
+            element={<Bounties bounties={bounties} />}
           />
 
           <Route 
             path="/bounties/:id"
-            element={<Bounty />}
+            element={<Bounty bounties={bounties}/>}
           />
         </Routes>
       </div>
