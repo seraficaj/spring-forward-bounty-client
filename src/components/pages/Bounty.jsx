@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import NotFound from './NotFound'
 import BountyDetails from '../BountyDetails'
@@ -43,6 +43,10 @@ export default function Bounty({ bounties }) {
       >
         {showForm ? 'exit' : 'edit'}
       </button>
+      
+      <div>
+        <Link to="/bounties">Back to Bounties</Link>
+      </div>
     </>
   )
 }
