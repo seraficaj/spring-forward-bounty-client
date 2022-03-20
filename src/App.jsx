@@ -5,8 +5,6 @@ import Bounties from './components/pages/Bounties'
 import Bounty from './components/pages/Bounty'
 import Home from './components/pages/Home'
 
-import './App.css';
-
 import {
   BrowserRouter as Router,
   Routes,

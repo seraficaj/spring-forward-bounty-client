@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Material UI Demo Branch
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Setup taken from [Material UI Docs](https://mui.com/getting-started/installation/)
+
+Steps summarized:
+- npm install all needed packages for Material UI
+- import fonts, icon packs, and fonts needed for Material UI
+- begin importing React Components from Material UI and styling app
 
 ## Available Scripts
 
