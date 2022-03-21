@@ -1,3 +1,7 @@
+# About this app:
+- This react app is intended to be used with the Sci Fi Node API
+- there is a branch on this repo where I am learning to use Material UI
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
