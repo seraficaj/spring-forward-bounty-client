@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import { Button } from '@mui/material';
-
 import Bounties from './components/pages/Bounties'
 import Bounty from './components/pages/Bounty'
 import Home from './components/pages/Home'
+import Navbar from './components/Navbar' ;
 
 import {
   BrowserRouter as Router,
@@ -23,6 +22,7 @@ function App() {
 
   return (
     <Router>
+      <Navbar />
       <div className="App">
         <Routes>
           <Route 
@@ -41,7 +41,6 @@ function App() {
           />
         </Routes>
       </div>
-      <Button variant="contained">Hello World</Button>
     </Router>
   );
 }
