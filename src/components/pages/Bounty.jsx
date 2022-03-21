@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
-import NotFound from './NotFound'
+
+import { Button } from '@mui/material'
+
 import BountyDetails from '../BountyDetails'
 import BountyEditForm from '../BountyEditForm'
+
 
 export default function Bounty({ bounties }) {
   // boolean to show form or details
@@ -38,15 +41,15 @@ export default function Bounty({ bounties }) {
           <BountyDetails bounty={bounty}/>
       }
 
-      <button
+      <Button variant="primary"
       onClick={() => setShowForm(!showForm)}
       >
         {showForm ? 'exit' : 'edit'}
-      </button>
+      </Button>
       
-      <div>
+      <Button variant="primary">
         <Link to="/bounties">Back to Bounties</Link>
-      </div>
+      </Button>
     </>
   )
 }

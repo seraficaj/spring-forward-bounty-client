@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import { ListItemText } from "@mui/material";
 
 export default function Bounties({ bounties }) {
     // state to control the form
@@ -8,16 +12,17 @@ export default function Bounties({ bounties }) {
     // render all the bounties with links to /bounties/:id
     const bountyLinks = bounties.map((bounty, idx) => {
         return (
-            <div key={`bounty-link${idx}`}>
+            <ListItem key={`bounty-link${idx}`}>
                 {/* front end link in react */}
-                <Link to={`/bounties/${bounty._id}`}>{bounty.name}</Link>
-            </div>
+                <ListItemText>
+                    <Link to={`/bounties/${bounty._id}`}>{bounty.name}</Link>
+                </ListItemText>
+            </ListItem>
         );
     });
     return (
-        <>
-            this will be a form
-            {bountyLinks}
-        </>
+        <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+            <List>{bountyLinks}</List>
+        </Box>
     );
 }
